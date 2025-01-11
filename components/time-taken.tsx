@@ -9,14 +9,14 @@ export function TimeTaken() {
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4"
             fill="none"
-            viewBox="0 24"
+            viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth={2}
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M9.75 9.75L14.25 14.25M14.25 9.75L9.75 14.25M21 12a9 9 0 11-18 0118 0z"
+              d="M9.75 9.75L14.25 14.25M14.25 9.75L9.75 14.25M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
           <span>Time Taken</span>
@@ -33,8 +33,8 @@ export function TimeTaken() {
                   alt="Time scale from 10 to 90 seconds"
                   className="w-full h-full object-contain"
                 />
-                <div className="absolute left-[20%] top-[55%] h-2 w-[40%] bg-red-500 rounded-sm" />
-                <div className="absolute left-[20%] top-[70%] h-2 w-[27%] bg-green-500 rounded-sm" />
+                <div className="absolute left-[9%] top-[55%] h-2 w-[40%] bg-red-500 rounded-sm" />
+                <div className="absolute left-[9%] top-[70%] h-2 w-[21%] bg-green-500 rounded-sm" />
                 <div className="absolute left-[30%] h-full w-[2%] bg-indigo-500 opacity-20 rounded-sm" />
               </div>
             </div>
