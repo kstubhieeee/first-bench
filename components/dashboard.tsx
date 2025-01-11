@@ -1,12 +1,12 @@
 "use client";
 
-import { Nav } from "./nav";
-import { ResultsCard } from "./results-card";
-import { PerformanceMetrics } from "./performance-metrics";
-import { Suggestions } from "./suggestions";
-import { AccuracyChart } from "./accuracy-chart";
-import { TimeTaken } from "./time-taken";
-import { RevisitPaper } from "./revisit-paper";
+import { Nav } from "@/components/nav";
+import { ResultsCard } from "@/components/results-card";
+import { PerformanceMetrics } from "@/components/performance-metrics";
+import { Suggestions } from "@/components/suggestions";
+import { AccuracyChart } from "@/components/accuracy-chart";
+import { TimeTaken } from "@/components/time-taken";
+import { RevisitPaper } from "@/components/revisit-paper";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"; // Fixed import path
 import React, { useState, useEffect } from "react";
 
