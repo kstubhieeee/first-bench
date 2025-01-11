@@ -1,12 +1,10 @@
-"use client";
-
-import { Nav } from "@/components/nav";
-import { ResultsCard } from "@/components/results-card";
-import { PerformanceMetrics } from "@/components/performance-metrics";
-import { Suggestions } from "@/components/suggestions";
-import { AccuracyChart } from "@/components/accuracy-chart";
-import { TimeTaken } from "@/components/time-taken";
-import { RevisitPaper } from "@/components/revisit-paper";
+import { Nav } from "./nav";
+import { ResultsCard } from "./results-card";
+import { PerformanceMetrics } from "./performance-metrics";
+import { Suggestions } from "./suggestions";
+import { AccuracyChart } from "./accuracy-chart";
+import { TimeTaken } from "./time-taken";
+import { RevisitPaper } from "./revisit-paper";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"; // Fixed import path
 import React, { useState, useEffect } from "react";
 
@@ -14,14 +12,14 @@ export default function Dashboard() {
   const [profileImage, setProfileImage] = useState("/placeholder.svg");
 
   useEffect(() => {
-    fetch("'https://randomuser.me/api/'")
+    fetch("https://randomuser.me/api/")
       .then((response) => response.json())
       .then((data) => {
         if (data.results && data.results[0] && data.results[0].picture) {
           setProfileImage(data.results[0].picture.medium);
         }
       })
-      .catch((error) => console.error("'Error fetching random user:'", error));
+      .catch((error) => console.error("Error fetching random user:", error));
   }, []);
 
   return (
@@ -65,14 +63,14 @@ export default function Dashboard() {
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-4 w-4 text-gray-400"
                         fill="none"
-                        viewBox="0 24"
+                        viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth={2}
-                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0118 0z"
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                         />
                       </svg>
                       Response Time
@@ -107,56 +105,45 @@ export default function Dashboard() {
               <div className="col-span-1">
                 <Card className="h-full">
                   <CardHeader>
-                    <CardTitle className="text-sm font-medium flex items-center">
+                    <CardTitle className="text-sm font-medium flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        />
+                      </svg>
                       Approach Data
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex items-center border border-gray-200 rounded-md p-2 dark:border-gray-800">
-                        <span className="bg-blue-100 text-blue-600 rounded-full px-2 py-1 text-xs font-medium mr-2">
-                          25%
-                        </span>
-                        <span>
-                          Based on{" "}
-                          <span className="font-bold text-blue-600 ml-1">
-                            Facts
+                    <div className="space-y-2">
+                      {[
+                        { percent: 25, type: "Facts" },
+                        { percent: 32, type: "Analysis" },
+                        { percent: 19, type: "Elimination" },
+                        { percent: 24, type: "Guess" },
+                      ].map((item) => (
+                        <div
+                          key={item.type}
+                          className="flex items-center p-3 bg-[#F3F6FF] rounded-lg"
+                        >
+                          <span className="text-lg font-semibold text-gray-700 mr-2">
+                            {item.percent}%
                           </span>
-                        </span>
-                      </div>
-                      <div className="flex items-center border border-gray-200 rounded-md p-2 dark:border-gray-800">
-                        <span className="bg-blue-100 text-blue-600 rounded-full px-1 py-1 text-xs font-medium mr-2">
-                          32%
-                        </span>
-                        <span>
-                          Based on{" "}
-                          <span className="font-bold text-blue-600 ml-1">
-                            Analysis
+                          <span className="text-gray-600">Based on</span>
+                          <span className="text-indigo-500 ml-2 font-medium">
+                            {item.type}
                           </span>
-                        </span>
-                      </div>
-                      <div className="flex items-center border border-gray-200 rounded-md p-2 dark:border-gray-800">
-                        <span className="bg-blue-100 text-blue-600 rounded-full px-1 py-1 text-xs font-medium mr-2">
-                          19%
-                        </span>
-                        <span>
-                          Based on{" "}
-                          <span className="font-bold text-blue-600 ml-1">
-                            Elimination
-                          </span>
-                        </span>
-                      </div>
-                      <div className="flex items-center border border-gray-200 rounded-md p-2 dark:border-gray-800">
-                        <span className="bg-blue-100 text-blue-600 rounded-full px-1 py-1 text-xs font-medium mr-2">
-                          24%
-                        </span>
-                        <span>
-                          Based on{" "}
-                          <span className="font-bold text-blue-600 ml-1">
-                            Guess
-                          </span>
-                        </span>
-                      </div>
+                        </div>
+                      ))}
                     </div>
                   </CardContent>
                 </Card>

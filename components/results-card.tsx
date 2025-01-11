@@ -10,7 +10,7 @@ export function ResultsCard({ profileImage }: { profileImage: string }) {
         <div className="flex flex-col items-center text-center mb-6">
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-TOvLx25Qng4bmyYCmRFwARkM8vFOm5.png"
-            alt="Results illustration showing a completed checklist and person with pencil"
+            alt="Results illustration showing a completed checklist and a person with a pencil"
             className="w-32 sm:w-48 mb-4"
           />
           <h2 className="text-2xl font-semibold text-indigo-600 mb-2">Your Result!</h2>

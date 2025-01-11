@@ -1,14 +1,7 @@
-"'use client'";
+'use client'
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  ResponsiveContainer,
-} from "recharts";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts'
 
 const data = [
   { slot: 1, accuracy: 85 },
@@ -18,14 +11,14 @@ const data = [
   { slot: 5, accuracy: 55 },
   { slot: 6, accuracy: 45 },
   { slot: 7, accuracy: 65 },
-];
+]
 
 const timeMarkers = [
-  { min: 10, label: "'10MIN'" },
-  { min: 15, label: "'15MIN'", isSelected: true },
-  { min: 30, label: "'30MIN'" },
-  { min: 45, label: "'45MIN'" },
-];
+  { min: 10, label: '10MIN' },
+  { min: 15, label: '15MIN', isSelected: true },
+  { min: 30, label: '30MIN' },
+  { min: 45, label: '45MIN' },
+]
 
 export function AccuracyChart() {
   return (
@@ -36,7 +29,7 @@ export function AccuracyChart() {
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4"
             fill="none"
-            viewBox="0 24"
+            viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth={2}
           >
@@ -58,8 +51,8 @@ export function AccuracyChart() {
                 key={marker.min}
                 className={`px-3 py-1 text-xs rounded cursor-pointer ${
                   marker.isSelected
-                    ? "'bg-teal-500 text-white'"
-                    : "'bg-gray-100 text-gray-600'"
+                    ? 'bg-teal-500 text-white'
+                    : 'bg-gray-100 text-gray-600'
                 }`}
               >
                 {marker.label}
@@ -76,11 +69,8 @@ export function AccuracyChart() {
             Accuracy
           </span>
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={data}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-            >
-              <CartesianGrid strokeDasharray="3" vertical={false} />
+            <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" vertical={false} />
               <XAxis dataKey="slot" />
               <YAxis
                 ticks={[0, 25, 50, 75, 100]}
@@ -97,5 +87,6 @@ export function AccuracyChart() {
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }
+

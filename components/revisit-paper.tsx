@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Info } from "lucide-react";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Info } from 'lucide-react'
 
 export function RevisitPaper() {
   return (
@@ -15,11 +15,10 @@ export function RevisitPaper() {
         </Button>
         <div className="flex items-start gap-2 text-sm text-gray-500">
           <Info className="w-4 h-4 mt-0.5" />
-          <p>
-            Instructions for how to upload your handwritten material is given
-          </p>
+          <p>Instructions for how to upload your handwritten material is given</p>
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }
+
